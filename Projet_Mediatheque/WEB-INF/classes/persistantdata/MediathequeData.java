@@ -25,13 +25,13 @@ public class MediathequeData implements PersistentMediatheque {
 		Mediatheque.getInstance().setData(new MediathequeData());
 
 		try {
-			DriverManager.registerDriver(new oracle.jdbc.OracleDriver());
+			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	//private static String url = "jdbc:oracle:thin:@vs-oracle2:1521:ORCL";
-	private static String url = "jdbc:mysql://localhost:80/projet_webjava";
+	private static String url = "jdbc:mysql://localhost:3306/projet_webjava";
 	private static String user = "root";
 	private static  String pass = "root";
 	private Connection connectBDD;
