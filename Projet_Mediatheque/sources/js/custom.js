@@ -10,6 +10,10 @@ jQuery(window).load(function(){
 
 
 $(document).ready(function(){
+    
+    $("#deconnect").on('click', function () {
+        window.location = 'index.jsp';
+    });
 
 	/* ========================================================================= */
 	/*	Menu item highlighting
@@ -18,7 +22,8 @@ $(document).ready(function(){
 	jQuery('#nav').singlePageNav({
 		offset: jQuery('#nav').outerHeight(),
 		filter: ':not(.external)',
-		speed: 1200,
+		speed: 400,
+        threshold: 120,
 		currentClass: 'current',
 		easing: 'easeInOutExpo',
 		updateHash: true,

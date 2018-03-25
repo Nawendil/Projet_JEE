@@ -29,9 +29,10 @@ public class MediathequeData implements PersistentMediatheque {
 			e.printStackTrace();
 		}
 	}
-	private static String url = "jdbc:oracle:thin:@vs-oracle2:1521:ORCL";
-	private static String user = "GRP206US12";
-	private static  String pass = "GRP206US12";
+	//private static String url = "jdbc:oracle:thin:@vs-oracle2:1521:ORCL";
+	private static String url = "jdbc:mysql://localhost:80/projet_webjava";
+	private static String user = "root";
+	private static  String pass = "root";
 	private Connection connectBDD;
 	private static PreparedStatement pst;
 	private static ResultSet res;

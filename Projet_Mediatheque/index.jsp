@@ -15,49 +15,49 @@
 	<body>
 		<div class="form">
 			<ul class="tab-group">
-				<li class="tab active"><a href="#login">Log In</a></li>
-				<li class="tab"><a href="#signup">Sign Up</a></li>
+				<li class="tab active"><a href="#login">Se Connecter</a></li>
+				<li class="tab"><a href="#signup">S'Inscrire</a></li>
 			</ul>
 			
 			<div class="tab-content">
 				<div id="login">   
-					<h1>Welcome Back!</h1>
-					<form action="/" method="post">
+					<h1>Connecte toi !</h1>
+					<form action="accueil.jsp" method="post">
 						<div class="field-wrap">
-							<label>Email Address<span class="req">*</span></label>
+							<label>Adresse mail<span class="req">*</span></label>
 							<input type="email"required autocomplete="off"/>
 						</div>
 						<div class="field-wrap">
-							<label>Password<span class="req">*</span></label>
+							<label>Mot de passe<span class="req">*</span></label>
 							<input type="password"required autocomplete="off"/>
 						</div>
-						<p class="forgot"><a href="#">Forgot Password?</a></p>
-						<button class="button button-block"/>Log In</button>
+						<p class="forgot"><a href="#">Mot de passe oublié ?</a></p>
+						<button class="button button-block">Connexion</button>
 					</form>
 				</div>
 				<div id="signup">   
-					<h1>Sign Up for Free</h1>
+					<h1>Inscription gratuite !</h1>
 			  
-					<form action="/" method="post">
+					<form action="accueil.jsp" method="post">
 						<div class="top-row">
 							<div class="field-wrap">
-								<label>First Name<span class="req">*</span></label>
+								<label>Nom<span class="req">*</span></label>
 								<input type="text" required autocomplete="off" />
 							</div>
 							<div class="field-wrap">
-								<label>Last Name<span class="req">*</span></label>
+								<label>Prénom<span class="req">*</span></label>
 								<input type="text"required autocomplete="off"/>
 							</div>
 						</div>
 						<div class="field-wrap">
-							<label>Email Address<span class="req">*</span></label>
+							<label>Adresse mail<span class="req">*</span></label>
 							<input type="email"required autocomplete="off"/>
 						</div>
 						<div class="field-wrap">
-							<label>Set A Password<span class="req">*</span></label>
+							<label>Mot de passe<span class="req">*</span></label>
 							<input type="password"required autocomplete="off"/>
 						</div>
-						<button type="submit" class="button button-block"/>Get Started</button>
+						<button type="submit" class="button button-block">Inscription</button>
 					</form>
 				</div>
 			</div><!-- tab-content -->

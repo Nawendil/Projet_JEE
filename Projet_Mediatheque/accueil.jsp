@@ -84,10 +84,11 @@
 				<!-- main nav -->
                 <nav class="collapse navbar-collapse navbar-right" role="navigation">
                     <ul id="nav" class="nav navbar-nav">
-                        <li><a href="#body">Home</a></li>
-                        <li><a href="#features">Emprunter</a></li>
-                        <li><a href="#works">Retourner</a></li>
-                        <li><a href="#team">Ajouter un document</a></li>
+                        <li><a href="#slider">Home</a></li>
+                        <li><a href="#emprunter">Emprunter</a></li>
+                        <li><a href="#retourner">Retourner</a></li>
+                        <li><a href="#ajouter">Ajouter un document</a></li>
+                        <li><a id="deconnect" href="">Se déconnecter</a></li>
                     </ul>
                 </nav>
 				<!-- /main nav -->
@@ -141,14 +142,14 @@
 		
 		
         <!--
-        Features
+        Emprunter
         ==================================== -->
-		<section id="features" class="features">
+		<section id="emprunter" class="emprunter">
 			<div class="container">
 				<div class="row">
 				
 					<div class="sec-title text-center mb50 wow bounceInDown animated" data-wow-duration="500ms">
-						<h2>Features</h2>
+						<h2>emprunter</h2>
 						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
 					</div>
 
@@ -201,19 +202,19 @@
 			</div>
 		</section>
         <!--
-        End Features
+        End Emprunter
         ==================================== -->
 		
 		
         <!--
-        Our Works
+        Retourner
         ==================================== -->
-		<section id="works" class="works clearfix">
+		<section id="retourner" class="retourner clearfix">
 			<div class="container">
 				<div class="row">
 				
 					<div class="sec-title text-center">
-						<h2>Works</h2>
+						<h2>retourner</h2>
 						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
 					</div>
 					
@@ -313,18 +314,18 @@
 
 		</section>
         <!--
-        End Our Works
+        End Retourner
         ==================================== -->
 		
         <!--
-        Meet Our Team
+        Ajouter
         ==================================== -->
-		<section id="team" class="team">
+		<section id="ajouter" class="ajouter">
 			<div class="container">
 				<div class="row">
 		
 					<div class="sec-title text-center wow fadeInUp animated" data-wow-duration="700ms">
-						<h2>Meet Our Team</h2>
+						<h2>Ajouter</h2>
 						<div class="devider"><i class="fa fa-heart-o fa-lg"></i></div>
 					</div>
 					
@@ -412,7 +413,7 @@
 			</div>
 		</section>
         <!--
-        End Meet Our Team
+        End Ajouter
         ==================================== -->
 		
 		<footer id="footer" class="footer">
@@ -421,7 +422,7 @@
 					<div class="col-md-12">
 						<p class="copyright text-center">
 							Copyright © 2015 <a href="http://themefisher.com/">Themefisher</a>. All rights reserved. Designed & developed by <a href="http://themefisher.com/">Themefisher</a><br>
-							Personalized by Damien Michaudel and Thomas Lesdel
+							Modified & personalized by Damien Michaudel and Thomas Lesdel
 						</p>
 					</div>
 				</div>
@@ -448,9 +449,6 @@
         <script src="sources/js/jquery-countTo.js"></script>
 		<!-- jquery.appear -->
         <script src="sources/js/jquery.appear.js"></script>
-		<!-- Contact form validation -->
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
 		<!-- jquery easing -->
         <script src="sources/js/jquery.easing.min.js"></script>
 		<!-- jquery easing -->
