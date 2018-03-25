@@ -2,14 +2,19 @@
 
 <%@ page contentType="text/html; charset=UTF-8" %>
 
-<%@ page import="java.util.Date" %>
-<%@ page import="utilisateurs.Abonne" %>
+<%@ page import="mediatheque.Mediatheque" %>
+<%@ page import="mediatheque.Utilisateur" %>
 
 <%
-	Date today = new Date();
-	String login = request.getParameter("login");
-	String pass = request.getParameter("pass");
-	Abonne ab = new Abonne(login,pass);
+    String login = request.getParameter("login");
+    String pass = request.getParameter("pass");
+   
+    Mediatheque m = Mediatheque.getInstance();
+   
+    Utilisateur user = m.getUser(login,pass);
+   
+    if (user == null)
+        response.sendRedirect("index.jsp");
 %>
 
 <!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->

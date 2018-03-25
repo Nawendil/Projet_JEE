@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import documents.CD;
@@ -44,7 +45,30 @@ public class MediathequeData implements PersistentMediatheque {
 	// renvoie la liste de tous les documents de la bibliothèque
 	@Override
 	public List<Document> tousLesDocuments() {
-		return null;
+		List<Document> listeDocs = new ArrayList<Document>();
+		int nbDocs = 0;
+		
+		try {
+			connectBDD = DriverManager.getConnection(url, user, pass);
+
+			String req = "SELECT * FROM Document";
+			pst = connectBDD.prepareStatement(req);
+
+			res = pst.executeQuery();
+			
+			while (res.next()) {
+				nbDocs++;
+			}
+			
+			finalize();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		for (int i = 1; i <= nbDocs; i++)
+			listeDocs.add(getDocument(i));
+		
+		return listeDocs;
 	}
 
 	// va récupérer le User dans la BD et le renvoie
@@ -132,6 +156,35 @@ public class MediathequeData implements PersistentMediatheque {
 		// args[0] -> le titre
 		// args [1] --> l'auteur
 		// etc...
+		try {
+			connectBDD = DriverManager.getConnection(url, user, pass);
+
+			String req = "INSERT INTO Document (TypeDoc, Titre, Auteur, Disponible)"
+						 + " VALUES (?, ?, ?, ?)";
+			pst = connectBDD.prepareStatement(req);
+			
+			String typeDoc = "";
+
+			switch (type) {
+				case 1:
+					typeDoc = "Livre";
+				case 2:
+					typeDoc = "DVD";
+				case 3:
+					typeDoc = "CD";
+			}
+			
+			pst.setString(1, typeDoc);
+			pst.setString(2, (String) args[0]);
+			pst.setString(3, (String) args[1]);
+			pst.setBoolean(4, true);
+			
+			pst.executeUpdate();
+			
+			finalize();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void finalize() throws SQLException {
