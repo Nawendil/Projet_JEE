@@ -40,6 +40,13 @@
 								}
 							%>
 						</div>
+						<div id="adminBaseOK">
+							<%
+								if(request.getAttribute("baseOK") != null){
+									out.print(request.getAttribute("baseOK"));
+								}
+							%>
+						</div>
 					</form>
 				</div><!--
 				<div id="signup">

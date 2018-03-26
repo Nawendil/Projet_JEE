@@ -198,3 +198,12 @@ textarea {
 	text-align: center;
 	margin-top: 1%;
 }
+
+#adminBaseOK {
+	width: 100%;
+	background-color: green;
+	color: white;
+	size: 20px;
+	text-align: center;
+	margin-top: 1%;
+}
