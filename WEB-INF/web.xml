@@ -1,13 +1,23 @@
 <web-app>
 
 	<servlet>
-		<servlet-name>Connection</servlet-name>
-		<servlet-class>servicesServlets.ServletConnect</servlet-class>
+		<servlet-name>Connexion</servlet-name>
+		<servlet-class>servicesServlets.ServletConnexion</servlet-class>
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>Connection</servlet-name>
-		<url-pattern>/connect </url-pattern>
+		<servlet-name>Connexion</servlet-name>
+		<url-pattern>/connexion </url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Deconnexion</servlet-name>
+		<servlet-class>servicesServlets.ServletDeconnexion</servlet-class>
+	</servlet>
 
+	<servlet-mapping>
+		<servlet-name>Deconnexion</servlet-name>
+		<url-pattern>/deconnexion </url-pattern>
+	</servlet-mapping>
+	
 </web-app>

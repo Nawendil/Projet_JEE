@@ -1,14 +1,16 @@
 package mediatheque;
 
 public class Utilisateur {
-	private String login, pass, role;
+	// Identifiant, mot de passe, type d'utilisateur (admin, abonne, bibliothecaire)
+	private String login, pass, type;
+	// Numéro d'identification de l'utilisateur dans la BDD
 	private int numero;
 	
-	public Utilisateur(int numero, String login, String pass, String role) {
+	public Utilisateur(int numero, String login, String pass, String type) {
 		this.numero = numero;
 		this.login = login;
 		this.pass = pass;
-		this.role = role;
+		this.type = type;
 	}
 	
 	public int getNum() {
@@ -23,16 +25,15 @@ public class Utilisateur {
 		return pass;
 	}
 	
-	public String getRole() {
-		return role;
+	public String getType() {
+		return type;
 	}
 	
 	public String toString() {
-		String user="";
-		user += "Utilisateur numéro : " + this.numero + System.lineSeparator();
-		user += "Pseudo : " + this.login + System.lineSeparator();
-		user += "Profil : " + this.role + System.lineSeparator();
-		user += System.lineSeparator();
+		String user = "";
+		user += "Numéro d'identification utilisateur : " + this.numero + "##";
+		user += "Identifiant : " + this.login + "##";
+		user += "Type/rôle : " + this.type + "##";
 		return user;
 	}
 }

@@ -52,7 +52,8 @@ a:hover {
 	color: #a0b3b0;
 	font-size: 20px;
 	float: left;
-	width: 50%;
+	/*width: 50%;*/
+	width:100%;
 	text-align: center;
 	cursor: pointer;
 	-webkit-transition: .5s ease;
@@ -68,10 +69,10 @@ a:hover {
 	background: #1ab188;
 	color: #ffffff;
 }
-
+/*
 .tab-content > div:last-child {
 	display: none;
-}
+}*/
 
 h1 {
 	text-align: center;
@@ -187,4 +188,13 @@ textarea {
 .forgot {
 	margin-top: -20px;
 	text-align: right;
+}
+
+#errConnect {
+	width: 100%;
+	background-color: red;
+	color: white;
+	size: 20px;
+	text-align: center;
+	margin-top: 1%;
 }

@@ -2,7 +2,7 @@
 
 <%@ page contentType="text/html; charset=UTF-8" %>
 
-<html lang="en" >
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
 		<title>Médiathèque</title>
@@ -16,13 +16,13 @@
 		<div class="form">
 			<ul class="tab-group">
 				<li class="tab active"><a href="#login">Se Connecter</a></li>
-				<li class="tab"><a href="#signup">S'Inscrire</a></li>
+				<!--<li class="tab"><a href="#signup">S'Inscrire</a></li>-->
 			</ul>
 			
 			<div class="tab-content">
-				<div id="login">   
+				<div id="login">
 					<h1>Connecte toi !</h1>
-					<form action="./connect" method="POST">
+					<form action="./connexion" method="POST">
 						<div class="field-wrap">
 							<label>Identifiant<span class="req">*</span></label>
 							<input name="login" type="texte" required autocomplete="off"/>
@@ -31,8 +31,15 @@
 							<label>Mot de passe<span class="req">*</span></label>
 							<input name="password" type="password" required autocomplete="off"/>
 						</div>
-						<p class="forgot"><a href="#">Mot de passe oublié ?</a></p>
+						<!--<p class="forgot"><a href="#">Mot de passe oublié ?</a></p>-->
 						<button class="button button-block">Connexion</button>
+						<div id="errConnect">
+							<%
+								if(request.getAttribute("errConnect") != null){
+									out.print(request.getAttribute("errConnect"));
+								}
+							%>
+						</div>
 					</form>
 				</div><!--
 				<div id="signup">
