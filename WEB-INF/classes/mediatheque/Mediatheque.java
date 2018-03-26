@@ -85,4 +85,21 @@ public class Mediatheque {
 		data.nouveauDocument(type, args);
 	};
 
+	// retourne la liste des documents qu'un abonné à emprunter
+	public List<Document> docsUser(int idUser) {
+		return data.docsUser(idUser);
+	}
+	
+	// ############# CES DEUX FONTCIONS SONT PRESENTES AU CAS OU LE SERVEUR S'ARRETE ###########
+	// ############# Cela évite de tout perdre en cas d'éventuels problèmes ####################
+	
+	// permet de noter dans la base qu'un abonné à emprunter tel doc
+	public void emprunter(int idUser, int idDoc) {
+		data.emprunter(idUser, idDoc);
+	}
+	
+	// permet de supprimer de la base le fait qu'un abonné à emprunter tel doc
+	public void retourner(int idDoc) {
+		data.retourner(idDoc);
+	}
 }

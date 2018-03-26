@@ -6,25 +6,23 @@ import mediatheque.Utilisateur;
 
 public class DVD implements Document {
 	private Utilisateur user;
-	private boolean disponible;
 	private String titre, auteur;
+	private int identificateur;
 
-	public DVD(String titre, String auteur, boolean disponible) {
+	public DVD(int identificateur, String titre, String auteur) {
 		this.titre = titre;
 		this.auteur = auteur;
-		this.disponible = disponible;
+		this.identificateur = identificateur;
 	}
 
 	@Override
 	public void emprunter(Utilisateur a) throws EmpruntException {
 		 this.user = a;
-		 this.disponible = false;
 	}
 
 	@Override
 	public void retour() {
 		this.user = null;
-		this.disponible = true;
 	}
 
 	@Override

@@ -128,24 +128,24 @@ public class MediathequeData implements PersistentMediatheque {
 			res = pst.executeQuery();
 
 			String typeDoc = "", titre = "", auteur = "";
-			boolean disponible = true;
+			int identificateur = 0;
 			
 			while (res.next()) {
 				typeDoc = res.getString("TypeDoc");
 				titre = res.getString("Titre");
 				auteur = res.getString("Auteur");
-				disponible = res.getBoolean("Disponible");
+				identificateur = res.getInt("IdDoc");
 			}
 			
 			finalize();
 			
 			switch (typeDoc) {
 				case "CD":
-					return new CD(titre,auteur,disponible);
+					return new CD(identificateur,titre,auteur);
 				case "DVD":
-					return new DVD(titre,auteur,disponible);
+					return new DVD(identificateur,titre,auteur);
 				case "Livre":
-					return new Livre(titre,auteur,disponible);
+					return new Livre(identificateur,titre,auteur);
 				default :
 					return null;
 			}
@@ -163,8 +163,8 @@ public class MediathequeData implements PersistentMediatheque {
 		try {
 			connectBDD = DriverManager.getConnection(url, user, pass);
 
-			String req = "INSERT INTO Document (TypeDoc, Titre, Auteur, Disponible)"
-						 + " VALUES (?, ?, ?, ?)";
+			String req = "INSERT INTO Document (TypeDoc, Titre, Auteur)"
+						 + " VALUES (?, ?, ?)";
 			pst = connectBDD.prepareStatement(req);
 			
 			String typeDoc = "";
@@ -181,7 +181,67 @@ public class MediathequeData implements PersistentMediatheque {
 			pst.setString(1, typeDoc);
 			pst.setString(2, (String) args[0]);
 			pst.setString(3, (String) args[1]);
-			pst.setBoolean(4, true);
+			
+			pst.executeUpdate();
+			
+			finalize();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public List<Document> docsUser(int idUser) {
+		List<Document> listeDocs = new ArrayList<Document>();
+		
+		try {
+			connectBDD = DriverManager.getConnection(url, user, pass);
+
+			String req = "SELECT * FROM Emprunter WHERE IdUtilisateur = ?";
+			pst = connectBDD.prepareStatement(req);
+
+			pst.setInt(1, idUser);
+			res = pst.executeQuery();
+			
+			while (res.next()) {
+				listeDocs.add(getDocument(res.getInt("IdDoc")));;
+			}
+			
+			finalize();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return listeDocs;
+	}
+	
+	public void emprunter(int idUser, int idDoc) {
+		try {
+			connectBDD = DriverManager.getConnection(url, user, pass);
+
+			String req = "INSERT INTO Emprunter (IdDoc, IdUtilisateur)"
+						 + " VALUES (?, ?)";
+			pst = connectBDD.prepareStatement(req);
+			
+			
+			pst.setInt(1, idDoc);
+			pst.setInt(2, idUser);
+			
+			pst.executeUpdate();
+			
+			finalize();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void retourner(int idDoc) {
+		try {
+			connectBDD = DriverManager.getConnection(url, user, pass);
+
+			String req = "DELETE FROM Emprunter WHERE IdDoc = ?";
+			pst = connectBDD.prepareStatement(req);
+			
+			pst.setInt(1, idDoc);
 			
 			pst.executeUpdate();
 			
