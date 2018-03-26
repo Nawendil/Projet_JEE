@@ -21,11 +21,6 @@ public class Mediatheque {
 	// singleton standard ======================== 
 	static {
 		instance = new Mediatheque();
-		try {
-			Class.forName("persistantdata.MediathequeData");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
 	}
 	private static Mediatheque instance;
 	public static Mediatheque getInstance() {

@@ -1,0 +1,13 @@
+<web-app>
+
+	<servlet>
+		<servlet-name>Connection</servlet-name>
+		<servlet-class>servicesServlets.ServletConnect</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Connection</servlet-name>
+		<url-pattern>/connect </url-pattern>
+	</servlet-mapping>
+
+</web-app>

@@ -4,5 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="D:/Jeux/apache-tomcat-7.0.35/lib/ojdbc6.jar"/>
 	<classpathentry kind="lib" path="D:/Jeux/apache-tomcat-7.0.35/lib/mysql-connector-java-5.1.46-bin.jar"/>
+	<classpathentry kind="lib" path="D:/Jeux/apache-tomcat-7.0.35/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

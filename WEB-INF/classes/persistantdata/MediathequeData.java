@@ -12,9 +12,6 @@ import documents.CD;
 import documents.DVD;
 import documents.Livre;
 import mediatheque.*;
-import utilisateurs.Abonne;
-import utilisateurs.Admin;
-import utilisateurs.Bibliothecaire;
 
 // classe mono-instance dont l'unique instance n'est connue que de la bibliotheque
 // via une auto-déclaration dans son bloc static
@@ -34,7 +31,7 @@ public class MediathequeData implements PersistentMediatheque {
 		}
 	}
 	//private static String url = "jdbc:oracle:thin:@vs-oracle2:1521:ORCL";
-	private static String url = "jdbc:mysql://localhost:3306/projet_webjava";
+	private static String url = "jdbc:mysql://127.0.0.1:3306/projet_webjava?useSSL=false";
 	private static String user = "root";
 	private static String pass = "root";
 	private Connection connectBDD;
@@ -81,7 +78,7 @@ public class MediathequeData implements PersistentMediatheque {
 		try {
 			connectBDD = DriverManager.getConnection(url, user, pass);
 
-			String req = "SELECT * FROM utilisateur";
+			String req = "SELECT * FROM utilisateur WHERE login = ? AND mdp = ?";
 			pst = connectBDD.prepareStatement(req);
 
 			pst.setString(1, login);
@@ -89,21 +86,24 @@ public class MediathequeData implements PersistentMediatheque {
 			res = pst.executeQuery();
 
 			String typeUser = "";
+			int num = 0;
 			
 			while (res.next()) {
-				if (res.getString("Login").equals(login) && res.getString("Mdp").equals(password))
+				if (res.getString("Login").equals(login) && res.getString("Mdp").equals(password)) {
 					typeUser = res.getString("TypeUser");
+					num = res.getInt("IdUtilisateur");
+				}
 			}
 			
 			finalize();
 			
 			switch (typeUser) {
 				case "admin":
-					return new Admin(login,password);
+					return new Utilisateur(num,login,password,typeUser);
 				case "abonne":
-					return new Abonne(login,password);
+					return new Utilisateur(num,login,password,typeUser);
 				case "bibliothecaire":
-					return new Bibliothecaire(login, password);
+					return new Utilisateur(num,login,password,typeUser);
 				default :
 					return null;
 			}
@@ -197,4 +197,11 @@ public class MediathequeData implements PersistentMediatheque {
 		connectBDD.close();
 	}
 
+	
+	@SuppressWarnings("unused")
+	public static void main(String[] args) {
+		Mediatheque mediatheque = Mediatheque.getInstance();
+		Utilisateur root = mediatheque.getUser("user", "user");
+		System.out.println(root.toString());
+	}
 }

@@ -22,7 +22,7 @@
 			<div class="tab-content">
 				<div id="login">   
 					<h1>Connecte toi !</h1>
-					<form action="accueil.jsp" method="POST">
+					<form action="./connect" method="POST">
 						<div class="field-wrap">
 							<label>Identifiant<span class="req">*</span></label>
 							<input name="login" type="texte" required autocomplete="off"/>
@@ -34,7 +34,7 @@
 						<p class="forgot"><a href="#">Mot de passe oublié ?</a></p>
 						<button class="button button-block">Connexion</button>
 					</form>
-				</div>
+				</div><!--
 				<div id="signup">
 					<h1>Inscription gratuite !</h1>
 					<form action="accueil.jsp" method="POST">
@@ -48,7 +48,7 @@
 						</div>
 						<button type="submit" class="button button-block">Inscription</button>
 					</form>
-				</div>
+				</div>-->
 			</div><!-- tab-content -->
 		</div> <!-- /form -->
 		
