@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 26 mars 2018 à 20:39
+-- Généré le :  lun. 26 mars 2018 à 21:57
 -- Version du serveur :  5.7.19
 -- Version de PHP :  7.1.9
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `document` (
   `Titre` varchar(255) DEFAULT NULL,
   `Auteur` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`IdDoc`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `document`
@@ -48,7 +48,9 @@ INSERT INTO `document` (`IdDoc`, `TypeDoc`, `Titre`, `Auteur`) VALUES
 (4, 'Livre', 'Harry Potter : Tome 4', 'J.K. Rollings'),
 (5, 'Livre', 'Harry Potter : Tome 5', 'J.K. Rollings'),
 (6, 'Livre', 'Harry Potter : Tome 6', 'J.K. Rollings'),
-(7, 'Livre', 'Harry Potter : Tome 7', 'J.K. Rollings');
+(7, 'Livre', 'Harry Potter : Tome 7', 'J.K. Rollings'),
+(8, 'DVD', 'Iron Man', 'Jon Favreau'),
+(9, 'CD', 'Unleashed', 'Skillet');
 
 -- --------------------------------------------------------
 

@@ -20,4 +20,34 @@
 		<url-pattern>/deconnexion </url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>Emprunter</servlet-name>
+		<servlet-class>servicesServlets.ServletEmprunter</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Emprunter</servlet-name>
+		<url-pattern>/emprunter </url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Retourner</servlet-name>
+		<servlet-class>servicesServlets.ServletRetourner</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Retourner</servlet-name>
+		<url-pattern>/retourner </url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Ajouter</servlet-name>
+		<servlet-class>servicesServlets.ServletAjouter</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Ajouter</servlet-name>
+		<url-pattern>/ajouter </url-pattern>
+	</servlet-mapping>
+	
 </web-app>

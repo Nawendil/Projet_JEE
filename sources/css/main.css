@@ -269,7 +269,10 @@ top: -8px;
   width: 8px;
 }
 
-
+#listeDocs , #ajouterDoc{
+	width: 100%;
+	text-align: center;
+}
 
 /*=========================================
 	Emprunter

@@ -31,9 +31,7 @@ public class Utilisateur {
 	
 	public String toString() {
 		String user = "";
-		user += "Numéro d'identification utilisateur : " + this.numero + "##";
-		user += "Identifiant : " + this.login + "##";
-		user += "Type/rôle : " + this.type + "##";
+		user += this.login;
 		return user;
 	}
 }

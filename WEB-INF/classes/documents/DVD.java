@@ -27,6 +27,7 @@ public class DVD implements Document {
 
 	@Override
 	public Object[] affiche() {
-		return null;
+		Object[] affiche = {identificateur,titre,auteur};
+		return affiche;
 	}
 }
